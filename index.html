@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Windows alert ()Method in HTML</title>
+    <style>
+      h1 {
+        color: rgb(12, 27, 235);
+      }
+      h2 {
+        font-family: Impact;
+      }
+      body {
+        text-align: center;
+      }
+    </style>
+
+    <!--- Mensaje alerta Hola Mundo JavaScrip-->
+
+    <script language="JavaScript">
+      alert("Hola Mundo");
+    </script>
+  </head>
+
+  <body bgcolor="#B0C4DE">
+    <!-- Habilitar y deshabilitar las funciones de JavaScript del navegador-->
+    <h1 id="header">Esto es JavaScript</h1>
+    <script>
+      document.body.appendChild(
+        document.createTextNode("Hola Mundo JS. JavasScript habilitado")
+      );
+      var h1 = document.getElementById("header");
+      h1 = document.getElementsByTagName("h1")[0];
+    </script>
+    <noscript
+      >Tu navegador no admnite JavaScript. JavasScript Deshabilitado
+    </noscript>
+
+    <h1>Bienvenidos</h1>
+    <h2>Java Script</h2>
+
+    <!--Mensaje de Alerta al darle doble click a un botton-->
+    <p>
+      Hacer doble click para mensaje de alerta
+      <br />
+      <button ondblclick="myalert()">
+        Mostrar mensaje de alerta
+      </button>
+      <script>
+        function myalert() {
+          alert("Test\n" + " mensaje de alerta" + " sobre boton");
+        }
+      </script>
+    </p>
+
+    <!--Validar que un input sea exclusivo de tipo numérico, adicionalmente si le es factible añada que reciba números negativos y fracciones-->
+    <h3>Validación input tipo numerico</h3>
+    <script>
+      function validarSiNumero(numero) {
+        if (!/^([0-9])*$/.test(numero))
+          alert("El valor " + numero + " no es un número");
+      }
+    </script>
+
+    <input
+      type="text"
+      name="numero"
+      id="numero"
+      value=""
+      class="data"
+      required
+      onKeyUp="javascript:validarSiNumero(this.value)"
+    />
+
+    <!--Validar un correo electrónico-->
+    <script type="text/javascript">
+      /*
+       * Función para validar una dirección de correo
+       * Tiene que recibir el identificador del formulario
+       */
+      function validateMail(idMail) {
+        //Creamos un objeto
+        object = document.getElementById(idMail);
+        valueForm = object.value;
+
+        // Patron para el correo
+        var patron = /^\w+([\.-]?\w+)@\w+([\.-]?\w+)(\.\w{2,4})+$/;
+        if (valueForm.search(patron) == 0) {
+          //Mail correcto
+          object.style.color = "#000";
+          return;
+        }
+        //Mail incorrecto
+        object.style.color = "#f00";
+      }
+      //-->
+    </script>
+    <hr />
+    <!--Validar un correo electrónico-->
+    <h3>Validar correo electrónico</h3>
+    <div class="correo">
+      <input
+        type="text"
+        name="email"
+        id="email"
+        value=""
+        class="data"
+        required
+        onKeyUp="javascript:validateMail('email')"
+      />
+
+      <!--Validar que un input sea de tipo fecha-->
+      <h3>Validación Fecha</h3>
+      <input type="date">
+    <br />
+
+    <!--Encender y apagar un foco, con cambio de imagen-->
+    <h3>Enceder y apagar foco</h3>
+    <button
+      onclick="document.getElementById('myImage').src='images/foco apagado.jpg'"
+    >
+      Apagado
+    </button>
+    <img id="myImage" src="images/foco apagado.jpg" style="width: 100px;" />
+    <button
+      onclick="document.getElementById('myImage').src='images/foco prendido.jpg'"
+    >
+      Encendido
+    </button>
+
+    <h3>Imagen de hombre o mujer</h3>
+    <button onclick="document.getElementById('Image').src='images/hombre.jpg'">
+      Hombre
+    </button>
+    <button onclick="document.getElementById('Image').src='images/mujer.jpg'">
+      mujer
+    </button>
+    <br />
+    <img id="Image" src="images/hombre.jpg" style="width: 300px;" />
+  </body>
+</html>
